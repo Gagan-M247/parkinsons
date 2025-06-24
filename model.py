@@ -14,7 +14,7 @@ X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.2, random_
 
 #Fitting XGBoost model to training set
 from xgboost import XGBClassifier
-classifier = XGBClassifier(n_estimators = 50, gamma = 0.1, max_depth = 5)
+classifier = XGBClassifier(n_estimators=50, gamma=0.1, max_depth=5, eval_metric='logloss')
 classifier.fit(X_train, y_train)
 
 #predicting
